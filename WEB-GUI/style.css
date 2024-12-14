@@ -1,0 +1,366 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgba(18, 3, 3, 0.779);
+}
+
+.controller {
+    width: 700px;
+    height: 460px;
+    background-color: #1c1c1c;
+    border-radius: 50px;
+    position: relative;
+    box-shadow: inset -10px -10px 20px #0d0d0d, inset 10px 10px 20px #333333;
+}
+.dpad {
+    position: absolute;
+    left: 60px;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.dpad-button {
+    background-color: #2c2c2c;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset -2px -2px 5px #1a1a1a, inset 2px 2px 5px #4d4d4d;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.dpad-button:active {
+    background-color: #444;
+    transform: scale(0.95);
+}
+
+#dpad-up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#dpad-right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#dpad-down {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#dpad-left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.left-stick,
+.right-stick {
+    width: 100px;
+    height: 100px;
+    background-color: #3a3a3a;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    transform: translateY(-50%);
+    box-shadow: inset -5px -5px 10px #1a1a1a, inset 5px 5px 10px #4d4d4d;
+    animation: glow 1.5s infinite alternate;
+}
+
+.left-stick {
+    left: 100px;
+    
+}
+
+.right-stick {
+    right: 100px;
+}
+
+.buttons {
+    position: absolute;
+    right: 70px;
+    top: 65%;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.buttons div {
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-shadow: inset -2px -2px 5px #1a1a1a, inset 2px 2px 5px #4d4d4d;
+}
+.buttons button:active {
+    background-color: #444;
+    transform: scale(0.95);
+}
+
+.screen-label {
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    font-family: Arial, sans-serif;
+
+}
+.circle-button {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.square-button {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.triangle-button {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.x-button {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#PS {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    box-shadow: inset -3px -3px 7px #1a1a1a, inset 3px 3px 7px #4d4d4d;
+}
+
+#start {
+    position: absolute;
+    bottom: 20px;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    box-shadow: inset -3px -3px 7px #1a1a1a, inset 3px 3px 7px #4d4d4d;
+}
+
+#stop {
+    position: absolute;
+    bottom: 20px;
+    left: 75%;
+    transform: translateX(-75%);
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    box-shadow: inset -3px -3px 7px #1a1a1a, inset 3px 3px 7px #4d4d4d;
+}
+@keyframes glow-green {
+    from {
+        box-shadow: 0 0 10px #4d4d4d, inset -5px -5px 10px #1a1a1a, inset 5px 5px 10px #4d4d4d;
+    }
+    to {
+        box-shadow: 0 0 20px #00ff00, inset -5px -5px 10px #1a1a1a, inset 5px 5px 10px #4d4d4d;
+    }
+}
+
+body.active .left-stick,
+body.active .right-stick {
+    animation: glow-green 1.5s infinite alternate;
+}
+
+
+
+.screen-label {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    width: 200px;
+    height: 100px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    border-color: rgb(233, 222, 222);
+    border-width: 2px; /* Adjusted border width */
+    border-style: solid; /* Added border style */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+.button-outer-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.active {
+  background-color: #2c3e50;
+}
+
+body.active .primary--button {
+  border: 2px solid #fff;
+  background-color: #fff;
+}
+
+.primary--button {
+  width: 150px;
+  min-height: 50px;
+  border: none;
+  background-color: transparent;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  position: relative;
+  cursor: pointer;
+}
+
+.primary--button::after {
+  min-height: 40px;
+  width: 45px;
+  display: block;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: transform 1s;
+}
+
+.primary--button:before {
+  
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 90px;
+  right: unset;
+  transform: translateY(-50%);
+  color: #ccc;
+  text-transform: uppercase;
+  transition: content 1s;
+}
+
+.turn-on .primary--button:before {
+ 
+  right: 100px;
+  left: unset;
+  transition: content 1s;
+}
+
+.turn-on .primary--button::after {
+  content: "";
+  min-height: 40px;
+  width: 45px;
+  display: block;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translate(1px, -50%);
+  transition: transform 1s;
+}
+
+/* Existing CSS styles */
+
+.left-stick,
+.right-stick {
+    width: 100px;
+    height: 100px;
+    background-color: #3a3a3a;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    transform: translateY(-50%);
+    box-shadow: inset -5px -5px 10px #1a1a1a, inset 5px 5px 10px #4d4d4d;
+    animation: glow 1.5s infinite alternate;
+}
+
+.left-stick {
+    left: 100px;
+    overflow: hidden; /* Ensures the joystick canvas does not overflow */
+    position: relative;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+/* Additional CSS for joystick functionality */
+body.active .left-stick {
+    animation: glow-green 1.5s infinite alternate;
+}
+
+.screen-label {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    width: 200px;
+    height: 100px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    border-color: rgb(233, 222, 222);
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}

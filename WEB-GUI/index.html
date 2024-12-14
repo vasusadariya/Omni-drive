@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS4 Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="controller">
+        <div class="dpad">
+            <button class="dpad-button" id="dpad-up">F</button>
+            <button class="dpad-button" id="dpad-right">R</button>
+            <button class="dpad-button" id="dpad-down">B</button>
+            <button class="dpad-button" id="dpad-left">L</button>
+        </div>
+       
+     
+        
+        <div class="left-stick">
+            <canvas id="joystickCanvas" width="100" height="100"></canvas>
+        </div>
+        
+        <div class="right-stick">
+          <canvas id="joystickCanvasRight" width="100" height="100"></canvas>
+      </div>
+      
+
+        <div class="buttons">
+            <div class="dpad-button" id="dpad-start">X</div>
+            <div class="dpad-button" id="dpad-stop">O</div>
+            <div class="dpad-button">△</div>
+            <div class="dpad-button">S</div>
+        </div>
+
+        <!-- Screen Label -->
+        <div class="screen-label" id="screen"> </div>
+     
+        <div class="ps-button" id="start">Start</div>
+        <div class="wrapper">
+            <div class="button-outer-wrapper">
+              <div class="button-inner-wrapper" id="PS">
+                <button id="js-button" class="js-button primary--button"></button>
+              </div>
+            </div>
+        </div>
+        
+        <div class="ps-button" id="stop">Stop</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
